@@ -3,4 +3,4 @@ install: true
 
 script:
   - mvn clean package
-  - mvn sonar:sonar  -Dsonar.projectKey=TEAM_TIE  -Dsonar.organization=1905-uta-java  -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login=$SONAR_TOKEN
+  - mvn sonar:sonar  -Dsonar.projectKey=1905-uta-java_TEAM_TIE  -Dsonar.organization=1905-uta-java  -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login=$SONAR_TOKEN
