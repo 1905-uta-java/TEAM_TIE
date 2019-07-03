@@ -1,4 +1,5 @@
 language: java
+intall: true
 
 script:
   -mvn clean package
