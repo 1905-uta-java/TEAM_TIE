@@ -6,7 +6,7 @@
 	<session-factory>
 		<property name="hibernate.connection.url">jdbc:oracle:thin:@project-2.c0kmggmy8ceo.us-east-2.rds.amazonaws.com:1521:ORCL</property>
 		<property name="hibernate.connection.username">Tie</property>
-		<property name="hibernate.connection.password">TiePass</property>
+		<property name="hibernate.connection.password">TiePass1</property>
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		
 		<property name="dialect">org.hibernate.dialect.Oracle12cDialect</property>
