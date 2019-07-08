@@ -7,15 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Trainer
+ * Servlet implementation class TrainerServlet
  */
-public class Trainer extends HttpServlet {
+public class TrainerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public Trainer() {
+    public TrainerServlet() {
         // TODO Auto-generated constructor stub
     }
 
