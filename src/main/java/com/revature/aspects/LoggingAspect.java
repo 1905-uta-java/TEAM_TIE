@@ -15,6 +15,7 @@ public class LoggingAspect {
 	@AfterReturning("within(com.revature.dao.*)")
 	public void logAfter(JoinPoint jp) {
 		log.info(jp.getSignature()+" was called");
+		System.out.println("Logged.");
 	}
 	
 	@AfterThrowing(pointcut="within(com.revature.dao.*)", throwing="ex")
