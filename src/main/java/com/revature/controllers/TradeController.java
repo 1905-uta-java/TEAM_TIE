@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,5 +29,26 @@ public class TradeController {
 		return lt;
 	}
 	
+	@RequestMapping(value="/id", method=RequestMethod.POST)
+	@ResponseBody
+	public Trade listTradesById(@RequestBody int id) {
+		return tdi.getTradeById(id);
+	}
 	
+	@RequestMapping(value="/new", method=RequestMethod.POST)
+	@ResponseBody
+	public Trade createTrade(@RequestBody Trade t) {
+		tdi.createTrade(t);
+		return t;
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.PUT)
+	public void updateTrade(@RequestBody Trade t) {
+		tdi.updateTrade(t);
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	public void deleteTrade(@RequestBody int id) {
+		tdi.deleteTrade(id);
+	}
 }
