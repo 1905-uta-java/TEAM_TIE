@@ -3,60 +3,75 @@ package com.revature.dao;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Trainer;
-import com.revature.util.HibernateUtil;
 
+@Repository
 public class TrainerDaoImpl implements TrainerDao {
 
+	@Autowired
+	private SessionFactory sf;
+	
 	@Override
+	@Transactional
 	public List<Trainer> getTrainers() {
 		// TODO Auto-generated method stub
-		Session s = HibernateUtil.getSession();
+		Session s = sf.getCurrentSession();
 		List<Trainer> trainers = s.createQuery("from Trainer", Trainer.class).list();
-		s.close();
 		return trainers;
 	}
 
 	@Override
+	@Transactional
 	public Trainer getTrainerById(int id) {
 		// TODO Auto-generated method stub
-		Session s = HibernateUtil.getSession();
+		Session s = sf.getCurrentSession();
 		Trainer t = s.get(Trainer.class, id);
-		s.close();
 		return t;
+	}
+	
+	@Override
+	@Transactional
+	public List<Trainer> getTrainersByTeam(int id){
+		Session s = sf.getCurrentSession();
+		List<Trainer> trainers = s.createQuery("from Trainer where TEAM_ID_TEAM_ID = "+id, Trainer.class).list();
+		return trainers;
 	}
 
 	@Override
+	@Transactional
 	public int createTrainer(Trainer t) {
 		// TODO Auto-generated method stub
-		Session s = HibernateUtil.getSession();
+		Session s = sf.getCurrentSession();
 		Transaction trs = s.beginTransaction();
 		int scs = (int) s.save(t);
 		trs.commit();
-		s.close();
 		return scs;
 	}
 
 	@Override
+	@Transactional
 	public void editTrainer(Trainer t) {
 		// TODO Auto-generated method stub
-		Session s = HibernateUtil.getSession();
+		Session s = sf.getCurrentSession();
 		Transaction trs = s.beginTransaction();
 		s.update(t);
 		trs.commit();
-		s.close();
 	}
 
 	@Override
+	@Transactional
 	public void deleteTrainer(int id) {
 		// TODO Auto-generated method stub
-		Session s = HibernateUtil.getSession();
+		Session s = sf.getCurrentSession();
 		Transaction trs = s.beginTransaction();
 		s.delete(new Trainer(id));
 		trs.commit();
-		s.close();
 	}
 
 }

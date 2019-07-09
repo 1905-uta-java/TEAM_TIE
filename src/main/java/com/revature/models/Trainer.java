@@ -1,7 +1,6 @@
 package com.revature.models;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,8 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Trainer {
@@ -27,15 +27,13 @@ public class Trainer {
 	@Column(unique=true)
 	private String login;
 	
+	@JsonIgnore
 	private String pass;
 	
 	@ManyToOne
 	private Team team_id;
 	
 	private int is_lead;
-	
-	@OneToMany(mappedBy="pokemon")
-	private List<Pokemon> pkmn;
 	
 	public Trainer() {
 		super();
@@ -111,9 +109,5 @@ public class Trainer {
 
 	public void setIs_lead(int is_lead) {
 		this.is_lead = is_lead;
-	}
-	
-	public List<Pokemon> getPokemon(){
-		return pkmn;
 	}
 }

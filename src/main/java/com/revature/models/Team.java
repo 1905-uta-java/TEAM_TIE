@@ -1,14 +1,12 @@
 package com.revature.models;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -23,9 +21,6 @@ public class Team {
 	
 	@Column(unique=true)
 	private String team_name;
-	
-	@OneToMany(mappedBy="trainer")
-	private List<Trainer> team_mates;
 	
 	public Team() {
 		super();
@@ -65,9 +60,5 @@ public class Team {
 
 	public void setTeamName(String team_name) {
 		this.team_name = team_name;
-	}
-	
-	public List<Trainer> getTeam_mates(){
-		return team_mates;
 	}
 }
