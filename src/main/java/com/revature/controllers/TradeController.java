@@ -35,6 +35,20 @@ public class TradeController {
 		return tdi.getTradeById(id);
 	}
 	
+	@RequestMapping(value="/incoming", method=RequestMethod.POST)
+	@ResponseBody
+	public List<Trade> incommingTrades(@RequestBody int id){
+		List<Trade> lt = tdi.getTradesByReciever(id);
+		return lt;
+	}
+	
+	@RequestMapping(value="/outgoing", method=RequestMethod.POST)
+	@ResponseBody
+	public List<Trade> outgoingTrades(@RequestBody int id){
+		List<Trade> lt = tdi.getTradesBySender(id);
+		return lt;
+	}
+	
 	@RequestMapping(value="/new", method=RequestMethod.POST)
 	@ResponseBody
 	public Trade createTrade(@RequestBody Trade t) {

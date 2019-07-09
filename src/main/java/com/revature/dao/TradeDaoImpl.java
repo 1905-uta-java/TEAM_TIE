@@ -44,14 +44,14 @@ public class TradeDaoImpl implements TradeDao {
 
 	@Override
 	@Transactional
-	public List<Trade> getTradesBySender(Trainer t) {
+	public List<Trade> getTradesBySender(int id) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		CriteriaBuilder cb = s.getCriteriaBuilder();
 		CriteriaQuery<Trade> cq = cb.createQuery(Trade.class);
 		Root<Trade> rt = cq.from(Trade.class);
 		cq.select(rt);
-		cq.where(cb.equal(rt.<Pokemon>get("pkmn_1").<Trainer>get("trainer_id").get("id"), t.getId()));
+		cq.where(cb.equal(rt.<Pokemon>get("pkmn_1").<Trainer>get("trainer_id").get("id"), id));
 		Query<Trade> q = s.createQuery(cq);
 		List<Trade> trades = q.list();
 		return trades;
@@ -59,14 +59,14 @@ public class TradeDaoImpl implements TradeDao {
 
 	@Override
 	@Transactional
-	public List<Trade> getTradesByReciever(Trainer t) {
+	public List<Trade> getTradesByReciever(int id) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		CriteriaBuilder cb = s.getCriteriaBuilder();
 		CriteriaQuery<Trade> cq = cb.createQuery(Trade.class);
 		Root<Trade> rt = cq.from(Trade.class);
 		cq.select(rt);
-		cq.where(cb.equal(rt.<Pokemon>get("pkmn_2").<Trainer>get("trainer_id").get("id"), t.getId()));
+		cq.where(cb.equal(rt.<Pokemon>get("pkmn_2").<Trainer>get("trainer_id").get("id"), id));
 		Query<Trade> q = s.createQuery(cq);
 		List<Trade> trades = q.list();
 		return trades;

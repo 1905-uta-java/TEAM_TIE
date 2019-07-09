@@ -42,6 +42,14 @@ public class TrainerDaoImpl implements TrainerDao {
 		List<Trainer> trainers = s.createQuery("from Trainer where TEAM_ID_TEAM_ID = "+id, Trainer.class).list();
 		return trainers;
 	}
+	
+	@Override
+	@Transactional
+	public Trainer getTrainerByLogin(String login) {
+		Session s = sf.getCurrentSession();
+		Trainer t = s.createQuery("from Trainer where LOGIN = " + login, Trainer.class).getSingleResult();
+		return t;
+	}
 
 	@Override
 	@Transactional

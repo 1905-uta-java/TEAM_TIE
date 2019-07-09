@@ -36,6 +36,12 @@ public class TrainerController {
 		return tdi.getTrainerById(id);
 	}
 	
+	@RequestMapping(value="/username", method=RequestMethod.POST)
+	@ResponseBody
+	public Trainer getTrainerByLogin(@RequestBody String login) {
+		return tdi.getTrainerByLogin(login);
+	}
+	
 	@RequestMapping(value="/team", method=RequestMethod.POST)
 	@ResponseBody
 	public List<Trainer> listTrainersByTeam(@RequestBody int team_id) {
