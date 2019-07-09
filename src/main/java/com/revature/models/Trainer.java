@@ -1,17 +1,25 @@
 package com.revature.models;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+		  property = "id")
 @Entity
 public class Trainer {
 	@Id
@@ -32,6 +40,9 @@ public class Trainer {
 	
 	@ManyToOne
 	private Team team_id;
+	
+	@OneToMany(mappedBy="trainer_id", fetch=FetchType.EAGER)
+	private List<Pokemon> pkmn;
 	
 	private int is_lead;
 	
@@ -109,5 +120,9 @@ public class Trainer {
 
 	public void setIs_lead(int is_lead) {
 		this.is_lead = is_lead;
+	}
+	
+	public List<Pokemon> getPokemon(){
+		return pkmn;
 	}
 }
