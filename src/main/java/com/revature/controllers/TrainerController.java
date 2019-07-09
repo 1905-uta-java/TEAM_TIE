@@ -28,11 +28,34 @@ public class TrainerController {
 		return lt;
 	}
 	
+	@RequestMapping(value="/id", method=RequestMethod.POST)
+	@ResponseBody
+	public Trainer getTrainer(@RequestBody int id) {
+		return tdi.getTrainerById(id);
+	}
+	
 	@RequestMapping(value="/team", method=RequestMethod.POST)
 	@ResponseBody
 	public List<Trainer> listTrainersByTeam(@RequestBody int team_id) {
 		List<Trainer> lt = tdi.getTrainersByTeam(team_id);
 		return lt;
+	}
+	
+	@RequestMapping(value="/new", method=RequestMethod.POST)
+	@ResponseBody
+	public Trainer createTrainer(@RequestBody Trainer t) {
+		tdi.createTrainer(t);
+		return t;
+	}
+	
+	@RequestMapping(value="/update", method=RequestMethod.PUT)
+	public void updateTrainer(@RequestBody Trainer t) {
+		tdi.editTrainer(t);
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	public void deleteTrainer(@RequestBody int id) {
+		tdi.deleteTrainer(id);
 	}
 	
 	@RequestMapping(value="/tst", method=RequestMethod.GET)

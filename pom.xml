@@ -3,6 +3,7 @@
   <groupId>com.revature</groupId>
   <artifactId>poketie</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   
   <properties>
   	<maven.compiler.source>1.8</maven.compiler.source>
