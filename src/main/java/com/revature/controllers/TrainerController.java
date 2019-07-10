@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,50 +27,53 @@ public class TrainerController {
 	
 	@RequestMapping(value= {"/", "/list"}, method=RequestMethod.GET)
 	@ResponseBody
-	public List<Trainer> listTrainers() {
+	public ResponseEntity<List<Trainer>> listTrainers() {
 		List<Trainer> lt = tdi.getTrainers();
-		return lt;
+		return new ResponseEntity<List<Trainer>>(lt, null, HttpStatus.OK);
+		//return lt;
 	}
 	
 	@RequestMapping(value="/id", method=RequestMethod.POST)
 	@ResponseBody
-	public Trainer getTrainer(@RequestBody int id) {
-		return tdi.getTrainerById(id);
+	public ResponseEntity<Trainer> getTrainer(@RequestBody int id) {
+		return new ResponseEntity<Trainer>(tdi.getTrainerById(id), null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/username", method=RequestMethod.POST)
 	@ResponseBody
-	public Trainer getTrainerByLogin(@RequestBody String login) {
-		return tdi.getTrainerByLogin(login);
+	public ResponseEntity<Trainer> getTrainerByLogin(@RequestBody String login) {
+		return new ResponseEntity<Trainer>(tdi.getTrainerByLogin(login), null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/team", method=RequestMethod.POST)
 	@ResponseBody
-	public List<Trainer> listTrainersByTeam(@RequestBody int team_id) {
+	public ResponseEntity<List<Trainer>> listTrainersByTeam(@RequestBody int team_id) {
 		List<Trainer> lt = tdi.getTrainersByTeam(team_id);
-		return lt;
+		return new ResponseEntity<List<Trainer>>(lt, null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/new", method=RequestMethod.POST)
 	@ResponseBody
-	public Trainer createTrainer(@RequestBody Trainer t) {
+	public ResponseEntity<Trainer> createTrainer(@RequestBody Trainer t) {
 		tdi.createTrainer(t);
-		return t;
+		return new ResponseEntity<Trainer>(t, null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.PUT)
-	public void updateTrainer(@RequestBody Trainer t) {
+	public ResponseEntity<String> updateTrainer(@RequestBody Trainer t) {
 		tdi.editTrainer(t);
+		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
-	public void deleteTrainer(@RequestBody int id) {
+	public ResponseEntity<String> deleteTrainer(@RequestBody int id) {
 		tdi.deleteTrainer(id);
+		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/tst", method=RequestMethod.GET)
 	@ResponseBody
-	public String testConnection() {
-		return "Worked.";
+	public ResponseEntity<String> testConnection() {
+		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
 	}
 }

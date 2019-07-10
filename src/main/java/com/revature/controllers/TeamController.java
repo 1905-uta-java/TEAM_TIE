@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,32 +26,34 @@ public class TeamController {
 	
 	@RequestMapping(value={"/", "/list"}, method=RequestMethod.GET)
 	@ResponseBody
-	public List<Team> getTeams(){
+	public ResponseEntity<List<Team>> getTeams(){
 		List<Team> lt = tdi.getTeams();
-		return lt;
+		return new ResponseEntity<List<Team>>(lt, null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/id", method=RequestMethod.POST)
 	@ResponseBody
-	public Team getTeamById(@RequestBody int id) {
+	public ResponseEntity<Team> getTeamById(@RequestBody int id) {
 		Team t = tdi.getTeamById(id);
-		return t;
+		return new ResponseEntity<Team>(t, null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/new", method=RequestMethod.POST)
 	@ResponseBody
-	public Team newTeam(@RequestBody Team t) {
+	public ResponseEntity<Team> newTeam(@RequestBody Team t) {
 		tdi.createTeam(t);
-		return t;
+		return new ResponseEntity<Team>(t, null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.PUT)
-	public void editTeam(@RequestBody Team t) {
+	public ResponseEntity<String> editTeam(@RequestBody Team t) {
 		tdi.updateTeam(t);
+		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
-	public void deleteTeam(@RequestBody int id) {
+	public ResponseEntity<String> deleteTeam(@RequestBody int id) {
 		tdi.deleteTeam(id);
+		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
 	}
 }
