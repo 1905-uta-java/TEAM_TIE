@@ -56,6 +56,11 @@ public class TradeController {
 		return t;
 	}
 	
+	@RequestMapping(value="/accept", method=RequestMethod.POST)
+	public void acceptTrade(@RequestBody Trade t) {
+		tdi.acceptTrade(t);
+	}
+	
 	@RequestMapping(value="/update", method=RequestMethod.PUT)
 	public void updateTrade(@RequestBody Trade t) {
 		tdi.updateTrade(t);

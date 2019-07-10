@@ -80,6 +80,22 @@ public class TradeDaoImpl implements TradeDao {
 		int scs = (int) s.save(t);
 		return scs;
 	}
+	
+	@Override
+	@Transactional
+	public void acceptTrade(Trade t) {
+		Session s = sf.getCurrentSession();
+		Pokemon pkmn1 = t.getPkmn_1();
+		Pokemon pkmn2 = t.getPkmn_2();
+		Trainer t1 = pkmn1.getTrainer_id();
+		pkmn1.setTrainer_id(pkmn2.getTrainer_id());
+		pkmn2.setTrainer_id(t1);
+		s.update(pkmn1);
+		s.update(pkmn2);
+		s.createQuery("delete from Trade where (PKMN_1_PK_ID = "+pkmn1.getId()+") OR (PKMN_2_PK_ID = "
+				+ pkmn1.getId()+") OR (PKMN_1_PK_ID = "+pkmn2.getId()+") OR (PKMN_2_PK_ID = "
+				+ pkmn2.getId()+")").executeUpdate();
+	}
 
 	@Override
 	@Transactional
