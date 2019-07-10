@@ -32,6 +32,8 @@ public class LoginController {
 		Trainer lt = tdi.getTrainerByLogin(login);
 		if(lt != null) {
 			if(lt.getPass().equals(pass)) {
+				responseHeaders.set("Access-Control-Expose-Headers","Authentication");
+				responseHeaders.set("Access-Control-Allow-Headers", "*");
 				responseHeaders.set("Authentication", lt.getId() + ":" + lt.getLogin());
 				return new ResponseEntity<String>("Successfully logged in.", responseHeaders, HttpStatus.OK);
 			}
