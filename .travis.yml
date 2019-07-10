@@ -1,7 +1,7 @@
 language: java
 
 before_install:
-  - wget https://ojdbc-project2-avoidance.s3.us-east-2.amazonaws.com/ojdbc7-12.1.0.jar
+  - wget $HAVEN
   - mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc7 -Dpackaging=jar -Dversion=12.1.0 -Dfile=ojdbc7-12.1.0.jar -DgeneratePom=true
 
 script:
