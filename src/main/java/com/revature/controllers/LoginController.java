@@ -31,7 +31,7 @@ public class LoginController {
 		String pass = creds[1];
 		Trainer lt = tdi.getTrainerByLogin(login);
 		if(lt != null) {
-			if(lt.getPass() == pass) {
+			if(lt.getPass().equals(pass)) {
 				responseHeaders.set("Authentication", lt.getId() + ":" + lt.getLogin());
 				return new ResponseEntity<String>("Successfully logged in.", responseHeaders, HttpStatus.OK);
 			}
