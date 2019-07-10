@@ -56,9 +56,7 @@ public class TrainerDaoImpl implements TrainerDao {
 	public int createTrainer(Trainer t) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		int scs = (int) s.save(t);
-		trs.commit();
 		return scs;
 	}
 
@@ -67,9 +65,7 @@ public class TrainerDaoImpl implements TrainerDao {
 	public void editTrainer(Trainer t) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.update(t);
-		trs.commit();
 	}
 
 	@Override
@@ -77,9 +73,7 @@ public class TrainerDaoImpl implements TrainerDao {
 	public void deleteTrainer(int id) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.delete(new Trainer(id));
-		trs.commit();
 	}
 
 }

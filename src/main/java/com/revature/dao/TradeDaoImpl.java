@@ -77,9 +77,7 @@ public class TradeDaoImpl implements TradeDao {
 	public int createTrade(Trade t) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		int scs = (int) s.save(t);
-		trs.commit();
 		return scs;
 	}
 
@@ -88,9 +86,7 @@ public class TradeDaoImpl implements TradeDao {
 	public void updateTrade(Trade t) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.update(t);
-		trs.commit();
 	}
 
 	@Override
@@ -98,9 +94,7 @@ public class TradeDaoImpl implements TradeDao {
 	public void deleteTrade(int id) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.delete(new Trade(id));
-		trs.commit();
 	}
 
 }

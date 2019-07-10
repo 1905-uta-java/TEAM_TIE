@@ -40,9 +40,7 @@ public class TeamDaoImpl implements TeamDao {
 	public int createTeam(Team t) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		int scs = (int) s.save(t);
-		trs.commit();
 		return scs;
 	}
 
@@ -51,9 +49,7 @@ public class TeamDaoImpl implements TeamDao {
 	public void updateTeam(Team t) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.update(t);
-		trs.commit();
 	}
 
 	@Override
@@ -61,9 +57,7 @@ public class TeamDaoImpl implements TeamDao {
 	public void deleteTeam(int id) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.delete(new Team(id));
-		trs.commit();
 	}
 
 }

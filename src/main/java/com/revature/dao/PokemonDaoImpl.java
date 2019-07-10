@@ -40,9 +40,7 @@ public class PokemonDaoImpl implements PokemonDao {
 	public int createPokemon(Pokemon p) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		int scs = (int) s.save(p);
-		trs.commit();
 		return scs;
 	}
 
@@ -51,9 +49,7 @@ public class PokemonDaoImpl implements PokemonDao {
 	public void updatePokemon(Pokemon p) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.update(p);
-		trs.commit();
 	}
 
 	@Override
@@ -61,9 +57,7 @@ public class PokemonDaoImpl implements PokemonDao {
 	public void deletePokemon(int id) {
 		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Transaction trs = s.beginTransaction();
 		s.delete(new Pokemon(id));
-		trs.commit();
 	}
 
 }
