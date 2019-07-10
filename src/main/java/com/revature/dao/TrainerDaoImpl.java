@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +38,7 @@ public class TrainerDaoImpl implements TrainerDao {
 	@Transactional
 	public List<Trainer> getTrainersByTeam(int id){
 		Session s = sf.getCurrentSession();
-		List<Trainer> trainers = s.createQuery("from Trainer where TEAM_ID_TEAM_ID = "+id, Trainer.class).list();
+		List<Trainer> trainers = s.createQuery("from Trainer where TEAM_ID_TEAM_ID = :id", Trainer.class).setParameter("id", id).list();
 		return trainers;
 	}
 	
@@ -47,7 +46,7 @@ public class TrainerDaoImpl implements TrainerDao {
 	@Transactional
 	public Trainer getTrainerByLogin(String login) {
 		Session s = sf.getCurrentSession();
-		Trainer t = s.createQuery("from Trainer where LOGIN = " + login, Trainer.class).getSingleResult();
+		Trainer t = s.createQuery("from Trainer where LOGIN = :login", Trainer.class).setParameter("login", login).getSingleResult();
 		return t;
 	}
 
