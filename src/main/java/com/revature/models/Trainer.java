@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import java.sql.Date;
+import java.time.Instant;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -53,6 +54,14 @@ public class Trainer {
 	public Trainer(int id) {
 		super();
 		this.id = id;
+	}
+	
+	public Trainer(String login, String pass, String email) {
+		this.setLogin(login);
+		this.setPass(pass);
+		this.setEmail(email);
+		long now = System.currentTimeMillis();
+		this.setCreated(new Date(now));
 	}
 	
 	public Trainer(int id, Date created, String login, String pass, String email, Team team_id, int is_lead) {

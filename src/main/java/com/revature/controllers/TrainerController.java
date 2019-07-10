@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.dao.TrainerDao;
 import com.revature.models.Trainer;
+import com.revature.validAnnot.ValidTrainer;
 
 @Controller
 @CrossOrigin
@@ -54,12 +55,14 @@ public class TrainerController {
 	
 	@RequestMapping(value="/new", method=RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<Trainer> createTrainer(@RequestBody Trainer t) {
+	public ResponseEntity<Trainer> createTrainer(@RequestBody String[] vals) {
+		Trainer t = new Trainer(vals[0], vals[1], vals[2]);
 		tdi.createTrainer(t);
 		return new ResponseEntity<Trainer>(t, null, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value="/update", method=RequestMethod.PUT)
+	@ValidTrainer
 	public ResponseEntity<String> updateTrainer(@RequestBody Trainer t) {
 		tdi.editTrainer(t);
 		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
