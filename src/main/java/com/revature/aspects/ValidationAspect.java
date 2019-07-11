@@ -21,7 +21,7 @@ public class ValidationAspect {
 	@Autowired
 	private TrainerDao td;
 	
-	@Around("within(com.revature.controllers.*) && !within(com.revature.controllers.LoginController) && !execute(com.revature.controllers.TrainerController.createTrainer)")
+	@Around("within(com.revature.controllers.*) && !within(com.revature.controllers.LoginController) && !execution(* com.revature.controllers.TrainerController.createTrainer(..))")
 	public Object tokenAuth(ProceedingJoinPoint pjp) throws Throwable {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		String auth = request.getHeader("Authentication");
@@ -72,7 +72,7 @@ public class ValidationAspect {
 	}
 	
 	// [trade_id, pkmn1_id, pkmn2_id]
-	@Around("@annotation(com.revature.validAnnot.ValidTrade")
+	@Around("@annotation(com.revature.validAnnot.ValidTrade)")
 	public Object validTrade(ProceedingJoinPoint pjp) throws Throwable {
 		String[] td = (String[])pjp.getArgs()[0];
 		if(td == null || td.length != 3 || td[0] == null || td[1] == null || td[2] == null)
