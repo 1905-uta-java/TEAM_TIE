@@ -61,12 +61,12 @@ public class TeamController {
 			return new ResponseEntity<>("Team does not exist", null, HttpStatus.BAD_REQUEST);
 		t.setTeamName(tm[1]);
 		tdi.updateTeam(t);
-		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/delete")
 	public ResponseEntity<String> deleteTeam(@RequestBody int id) {
 		tdi.deleteTeam(id);
-		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 }

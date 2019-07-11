@@ -104,13 +104,13 @@ public class TrainerController {
 		if(vals[5] != null)
 			t.setIs_lead(Integer.parseInt(vals[5]));
 		tdi.editTrainer(t);
-		return new ResponseEntity<>("Updated", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/delete")
 	public ResponseEntity<String> deleteTrainer(@RequestBody int id) {
 		tdi.deleteTrainer(id);
-		return new ResponseEntity<>("Deleted", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@GetMapping(value="/tst")

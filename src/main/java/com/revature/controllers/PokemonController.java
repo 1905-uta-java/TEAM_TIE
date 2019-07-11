@@ -85,12 +85,12 @@ public class PokemonController {
 		p.setMove_three(pkmn[6]);
 		p.setMove_four(pkmn[7]);
 		pdi.updatePokemon(p);
-		return new ResponseEntity<>("Updated", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/delete")
 	public ResponseEntity<String> deletePokemon(@RequestBody int id) {
 		pdi.deletePokemon(id);
-		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 }
