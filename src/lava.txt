@@ -1806,3 +1806,227 @@ Caused by: java.lang.IllegalArgumentException: Pointcut is not well-formed: expe
 2019-07-11 13:35:51 INFO  root:17 - void com.revature.dao.PokemonDao.deletePokemon(int) was called
 2019-07-11 13:35:51 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
 2019-07-11 13:35:51 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 13:35:38 CDT 2019]; root of context hierarchy
+2019-07-11 14:22:02 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-11 14:22:02 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-11 14:22:03 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-11 14:22:03 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:22:03 CDT 2019]; root of context hierarchy
+2019-07-11 14:22:05 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-11 14:22:05 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-11 14:22:06 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-11 14:22:08 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(java.lang.String[])
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-11 14:22:12 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-11 14:22:14 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:22:03 CDT 2019]; root of context hierarchy
+2019-07-11 14:22:15 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:22:03 CDT 2019]; root of context hierarchy
+2019-07-11 14:22:15 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@25e2ab5a] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-11 14:22:15 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:22:16 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:22:16 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-07-11 14:22:16 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerByLogin(String) was called
+2019-07-11 14:22:16 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 14:22:16 INFO  root:17 - void com.revature.dao.TrainerDao.editTrainer(Trainer) was called
+2019-07-11 14:22:16 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:22:16 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:22:17 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-11 14:22:17 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:22:17 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:22:17 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:22:17 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:22:17 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:22:17 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:22:18 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:22:18 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:22:18 ERROR root:22 - int com.revature.dao.TradeDao.createTrade(Trade) threw an exception: java.lang.NullPointerException
+2019-07-11 14:22:18 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 14:22:18 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 14:22:18 INFO  root:17 - void com.revature.dao.TeamDao.updateTeam(Team) was called
+2019-07-11 14:22:18 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 14:22:18 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-11 14:22:18 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:22:18 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:22:18 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:22:19 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:22:19 INFO  root:17 - void com.revature.dao.PokemonDao.updatePokemon(Pokemon) was called
+2019-07-11 14:22:19 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:22:19 INFO  root:17 - void com.revature.dao.PokemonDao.deletePokemon(int) was called
+2019-07-11 14:22:19 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:22:19 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:22:03 CDT 2019]; root of context hierarchy
+2019-07-11 14:27:31 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-11 14:27:32 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-11 14:27:32 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-11 14:27:32 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:27:32 CDT 2019]; root of context hierarchy
+2019-07-11 14:27:34 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-11 14:27:34 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-11 14:27:35 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-11 14:27:37 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(java.lang.String[])
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-11 14:27:42 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-11 14:27:44 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:27:32 CDT 2019]; root of context hierarchy
+2019-07-11 14:27:45 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:27:32 CDT 2019]; root of context hierarchy
+2019-07-11 14:27:45 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@3d9f6567] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-11 14:27:45 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:27:45 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:27:46 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-07-11 14:27:46 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerByLogin(String) was called
+2019-07-11 14:27:46 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 14:27:46 INFO  root:17 - void com.revature.dao.TrainerDao.editTrainer(Trainer) was called
+2019-07-11 14:27:46 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:27:46 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:27:46 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-11 14:27:47 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:27:47 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:27:47 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:27:47 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:27:47 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:27:47 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:27:47 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:27:47 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:27:48 INFO  root:17 - int com.revature.dao.TradeDao.createTrade(Trade) was called
+2019-07-11 14:27:48 INFO  root:17 - Trade com.revature.dao.TradeDao.getTradeById(int) was called
+2019-07-11 14:27:48 WARN  SqlExceptionHelper:137 - SQL Error: 904, SQLState: 42000
+2019-07-11 14:27:48 ERROR SqlExceptionHelper:142 - ORA-00904: "PKMN_2_PK_ID": invalid identifier
+
+2019-07-11 14:27:48 ERROR root:22 - void com.revature.dao.TradeDao.acceptTrade(Trade) threw an exception: org.hibernate.exception.SQLGrammarException: could not execute statement
+2019-07-11 14:27:48 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 14:27:48 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 14:27:48 INFO  root:17 - void com.revature.dao.TeamDao.updateTeam(Team) was called
+2019-07-11 14:27:48 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 14:27:49 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-11 14:27:49 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:27:49 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:27:49 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:27:49 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:27:49 INFO  root:17 - void com.revature.dao.PokemonDao.updatePokemon(Pokemon) was called
+2019-07-11 14:27:49 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:27:49 INFO  root:17 - void com.revature.dao.PokemonDao.deletePokemon(int) was called
+2019-07-11 14:27:50 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:27:50 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:27:32 CDT 2019]; root of context hierarchy
+2019-07-11 14:30:56 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-11 14:30:56 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-11 14:30:57 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-11 14:30:57 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:30:57 CDT 2019]; root of context hierarchy
+2019-07-11 14:30:59 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-11 14:30:59 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-11 14:31:00 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-11 14:31:02 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(java.lang.String[])
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-11 14:31:06 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-11 14:31:09 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:30:57 CDT 2019]; root of context hierarchy
+2019-07-11 14:31:09 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:30:57 CDT 2019]; root of context hierarchy
+2019-07-11 14:31:09 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@25e2ab5a] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-11 14:31:09 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:31:10 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:31:10 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2019-07-11 14:31:10 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerByLogin(String) was called
+2019-07-11 14:31:10 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 14:31:10 INFO  root:17 - void com.revature.dao.TrainerDao.editTrainer(Trainer) was called
+2019-07-11 14:31:10 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:31:10 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:31:11 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-11 14:31:11 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:31:11 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:31:11 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:31:11 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:31:11 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:31:11 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:31:11 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:31:12 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:31:12 INFO  root:17 - int com.revature.dao.TradeDao.createTrade(Trade) was called
+2019-07-11 14:31:12 INFO  root:17 - Trade com.revature.dao.TradeDao.getTradeById(int) was called
+2019-07-11 14:31:12 INFO  root:17 - void com.revature.dao.TradeDao.acceptTrade(Trade) was called
+2019-07-11 14:31:12 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:31:12 INFO  root:17 - Trade com.revature.dao.TradeDao.getTradeById(int) was called
+2019-07-11 14:31:13 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:31:13 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:31:13 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 14:31:13 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 14:31:13 INFO  root:17 - void com.revature.dao.TeamDao.updateTeam(Team) was called
+2019-07-11 14:31:13 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 14:31:13 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-11 14:31:13 INFO  root:17 - int com.revature.dao.TrainerDao.createTrainer(Trainer) was called
+2019-07-11 14:31:13 INFO  root:17 - Trainer com.revature.dao.TrainerDao.getTrainerById(int) was called
+2019-07-11 14:31:13 INFO  root:17 - int com.revature.dao.PokemonDao.createPokemon(Pokemon) was called
+2019-07-11 14:31:14 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:31:14 INFO  root:17 - void com.revature.dao.PokemonDao.updatePokemon(Pokemon) was called
+2019-07-11 14:31:14 INFO  root:17 - Pokemon com.revature.dao.PokemonDao.getPokemonById(int) was called
+2019-07-11 14:31:14 INFO  root:17 - void com.revature.dao.PokemonDao.deletePokemon(int) was called
+2019-07-11 14:31:14 INFO  root:17 - void com.revature.dao.TrainerDao.deleteTrainer(int) was called
+2019-07-11 14:31:14 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 14:30:57 CDT 2019]; root of context hierarchy

@@ -95,8 +95,8 @@ public class TradeDaoImpl implements TradeDao {
 		s.update(pkmn2.getTrainer_id());
 		s.update(pkmn1);
 		s.update(pkmn2);
-		s.createQuery("delete from Trade where (PKMN_1_PK_ID = :id_one) OR (PKMN_2_PK_ID = "
-				+ ":id_one) OR (PKMN_1_PK_ID = :id_two) OR (PKMN_2_PK_ID = :id_two)")
+		s.createQuery("delete from Trade where (PKMN_1_PKMN_PK_ID = :id_one) OR (PKMN_2_PKMN_PK_ID = "
+				+ ":id_one) OR (PKMN_1_PKMN_PK_ID = :id_two) OR (PKMN_2_PKMN_PK_ID = :id_two)")
 		.setParameter("id_one", pkmn1.getId()).setParameter("id_two", pkmn2.getId()).executeUpdate();
 	}
 

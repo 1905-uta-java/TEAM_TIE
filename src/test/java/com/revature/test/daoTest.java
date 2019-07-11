@@ -1,6 +1,7 @@
 package com.revature.test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +15,7 @@ import com.revature.dao.TradeDao;
 import com.revature.dao.TrainerDao;
 import com.revature.models.Pokemon;
 import com.revature.models.Team;
+import com.revature.models.Trade;
 import com.revature.models.Trainer;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -88,5 +90,36 @@ public class daoTest {
 		assertEquals(p2.getMove_two(), p3.getMove_two());
 		pkmndao.deletePokemon(pkid);
 		traindao.deleteTrainer(trid);
+	}
+	
+	// The most complicated test...
+	@Test
+	public void tradeDaoTests() {
+		Trainer tr1 = new Trainer("test4train1", "pass41", "test4@train1.com");
+		Trainer tr2 = new Trainer("test4train2", "pass42", "test4@train2.com");
+		int trid1 = traindao.createTrainer(tr1);
+		int trid2 = traindao.createTrainer(tr2);
+		Pokemon pk1 = new Pokemon();
+		pk1.setPkmn_id(41);
+		pk1.setMove_one("1");
+		pk1.setTrainer_id(traindao.getTrainerById(trid1));
+		Pokemon pk2 = new Pokemon();
+		pk2.setPkmn_id(82);
+		pk2.setMove_one("1");
+		pk2.setTrainer_id(traindao.getTrainerById(trid2));
+		int pkid1 = pkmndao.createPokemon(pk1);
+		int pkid2 = pkmndao.createPokemon(pk2);
+		Trade t1 = new Trade();
+		t1.setPkmn_1(pkmndao.getPokemonById(pkid1));
+		t1.setPkmn_2(pkmndao.getPokemonById(pkid2));
+		int trid = tradedao.createTrade(t1);
+		Trade t2 = tradedao.getTradeById(trid);
+		assertEquals(t1.getPkmn_1().getPkmn_id(), t2.getPkmn_1().getPkmn_id());
+		tradedao.acceptTrade(t2);
+		Trainer tr1a = traindao.getTrainerById(trid1);
+		assertEquals(82, tr1a.getPokemon().get(0).getPkmn_id());
+		assertNull(tradedao.getTradeById(trid));
+		traindao.deleteTrainer(trid1);
+		traindao.deleteTrainer(trid2);
 	}
 }

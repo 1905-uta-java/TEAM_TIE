@@ -27,13 +27,13 @@ public class ValidationAspect {
 		String auth = request.getHeader("Authentication");
 		String invalid = "Invalid Authentication";
 		if(auth == null)
-			return new ResponseEntity<String>(invalid, null, HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>(invalid + ": no token.", null, HttpStatus.FORBIDDEN);
 		String[] tokens = auth.split(":");
 		if(tokens.length != 2 || !tokens[0].matches("\\d+"))
-			return new ResponseEntity<String>(invalid, null, HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>(invalid + ": invalid token.", null, HttpStatus.FORBIDDEN);
 		Trainer t = td.getTrainerById(Integer.parseInt(tokens[0]));
 		if(t == null || !t.getLogin().equals(tokens[1]))
-			return new ResponseEntity<String>(invalid, null, HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>(invalid + ": incorrect token.", null, HttpStatus.FORBIDDEN);
 		return pjp.proceed();
 	}
 	
