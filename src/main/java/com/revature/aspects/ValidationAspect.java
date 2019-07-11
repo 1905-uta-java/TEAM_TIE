@@ -53,9 +53,9 @@ public class ValidationAspect {
 	@Around("@annotation(com.revature.validAnnot.ValidPokemon)")
 	public Object validPokemon(ProceedingJoinPoint pjp) throws Throwable {
 		String[] pkmn = (String[])pjp.getArgs()[0];
-		if(pkmn == null ||pkmn.length != 8 || pkmn[0] == null || pkmn[2] == null)
+		if(pkmn == null ||pkmn.length != 8 || pkmn[0] == null || pkmn[1] == null || pkmn[3] == null)
 			return new ResponseEntity<String>("Invalid Pokemon", null, HttpStatus.BAD_REQUEST);
-		if(!pkmn[0].matches("\\d+") || !pkmn[2].matches("\\d+") || (pkmn[5] != null && !pkmn[5].matches("\\d+")))
+		if(!pkmn[0].matches("\\d+") || !pkmn[1].matches("\\d+") || !pkmn[3].matches("\\d+") || (pkmn[5] != null && !pkmn[5].matches("\\d+")))
 			return new ResponseEntity<String>("Invalid Pokemon", null, HttpStatus.BAD_REQUEST);
 		return pjp.proceed();
 	}
