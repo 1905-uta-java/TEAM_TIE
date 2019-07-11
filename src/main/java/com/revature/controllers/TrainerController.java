@@ -87,6 +87,8 @@ public class TrainerController {
 	@ValidTrainer
 	public ResponseEntity<String> updateTrainer(@RequestBody String[] vals) {
 		Trainer t = tdi.getTrainerById(Integer.parseInt(vals[0]));
+		if(t == null)
+			return new ResponseEntity<>("Trainer does not exist.", null, HttpStatus.BAD_REQUEST);
 		if(vals[1] != null)
 			t.setLogin(vals[1]);
 		if(vals[2] != null)

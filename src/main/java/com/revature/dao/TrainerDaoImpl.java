@@ -41,7 +41,10 @@ public class TrainerDaoImpl implements TrainerDao {
 	@Transactional
 	public Trainer getTrainerByLogin(String login) {
 		Session s = sf.getCurrentSession();
-		return s.createQuery("from Trainer where LOGIN = :login", Trainer.class).setParameter("login", login).getSingleResult();
+		List<Trainer> t = s.createQuery("from Trainer where LOGIN = :login", Trainer.class).setParameter("login", login).list();
+		if(!t.isEmpty())
+			return t.get(0);
+		return null;
 	}
 
 	@Override
@@ -66,7 +69,9 @@ public class TrainerDaoImpl implements TrainerDao {
 	@Transactional
 	public void deleteTrainer(int id) {
 		Session s = sf.getCurrentSession();
-		s.delete(new Trainer(id));
+		Trainer t = s.get(Trainer.class, id);
+		if(t != null)
+			s.delete(t);
 	}
 
 }

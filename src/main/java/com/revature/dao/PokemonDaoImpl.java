@@ -54,7 +54,9 @@ public class PokemonDaoImpl implements PokemonDao {
 	@Transactional
 	public void deletePokemon(int id) {
 		Session s = sf.getCurrentSession();
-		s.delete(new Pokemon(id));
+		Pokemon pkmn = s.get(Pokemon.class, id);
+		if(pkmn != null)
+			s.delete(pkmn);
 	}
 
 }

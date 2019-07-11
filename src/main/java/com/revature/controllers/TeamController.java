@@ -57,6 +57,8 @@ public class TeamController {
 	@ValidTeam
 	public ResponseEntity<String> editTeam(@RequestBody String[] tm) {
 		Team t = tdi.getTeamById(Integer.parseInt(tm[0]));
+		if(t == null)
+			return new ResponseEntity<>("Team does not exist", null, HttpStatus.BAD_REQUEST);
 		t.setTeamName(tm[1]);
 		tdi.updateTeam(t);
 		return new ResponseEntity<>("Complete", null, HttpStatus.OK);

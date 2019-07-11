@@ -55,6 +55,8 @@ public class PokemonController {
 		p.setPkmn_id(Integer.parseInt(pkmn[1]));
 		p.setNickname(pkmn[2]);
 		Trainer t = tdi.getTrainerById(Integer.parseInt(pkmn[3]));
+		if(t == null)
+			return new ResponseEntity<>(null, null, HttpStatus.BAD_REQUEST);
 		p.setTrainer_id(t);
 		p.setMove_one(pkmn[4]);
 		p.setMove_two(pkmn[5]);
@@ -74,6 +76,8 @@ public class PokemonController {
 		p.setNickname(pkmn[2]);
 		if(p.getTrainer_id().getId() != Integer.parseInt(pkmn[3])) {
 			Trainer t = tdi.getTrainerById(Integer.parseInt(pkmn[3]));
+			if(t == null)
+				return new ResponseEntity<>("Trainer does not exist.", null, HttpStatus.BAD_REQUEST);
 			p.setTrainer_id(t);
 		}
 		p.setMove_one(pkmn[4]);

@@ -20,6 +20,7 @@ import com.revature.dao.PokemonDao;
 import com.revature.dao.TradeDao;
 import com.revature.models.Pokemon;
 import com.revature.models.Trade;
+import com.revature.validAnnot.ValidTrade;
 
 @Controller
 @CrossOrigin
@@ -61,10 +62,13 @@ public class TradeController {
 	//[trade_id, pkmn1_id, pkmn2_id]
 	@PostMapping(value="/new")
 	@ResponseBody
+	@ValidTrade
 	public ResponseEntity<Trade> createTrade(@RequestBody String[] tsa) {
 		Trade t = new Trade();
 		Pokemon p1 = pdi.getPokemonById(Integer.parseInt(tsa[1]));
 		Pokemon p2 = pdi.getPokemonById(Integer.parseInt(tsa[2]));
+		if(p1 == null || p2 == null)
+			return new ResponseEntity<>(null, null, HttpStatus.BAD_REQUEST);
 		t.setPkmn_1(p1);
 		t.setPkmn_2(p2);
 		tdi.createTrade(t);
@@ -80,8 +84,15 @@ public class TradeController {
 	
 	// [trade_id, pkmn1_id, pkmn2_id]
 	@PutMapping(value="/update")
+	@ValidTrade
 	public ResponseEntity<String> updateTrade(@RequestBody String[] tsa) {
 		Trade t = tdi.getTradeById(Integer.parseInt(tsa[0]));
+		Pokemon p1 = pdi.getPokemonById(Integer.parseInt(tsa[1]));
+		Pokemon p2 = pdi.getPokemonById(Integer.parseInt(tsa[2]));
+		if(p1 == null || p2 == null || t == null)
+			return new ResponseEntity<>(null, null, HttpStatus.BAD_REQUEST);
+		t.setPkmn_1(p1);
+		t.setPkmn_2(p2);
 		tdi.updateTrade(t);
 		return new ResponseEntity<>("Updated", null, HttpStatus.OK);
 	}

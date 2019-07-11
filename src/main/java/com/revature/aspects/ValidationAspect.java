@@ -21,7 +21,7 @@ public class ValidationAspect {
 	@Autowired
 	private TrainerDao td;
 	
-	@Around("within(com.revature.controllers.*) && !within(com.revature.controllers.LoginController)")
+	@Around("within(com.revature.controllers.*) && !within(com.revature.controllers.LoginController) && !execute(com.revature.controllers.TrainerController.createTrainer)")
 	public Object tokenAuth(ProceedingJoinPoint pjp) throws Throwable {
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 		String auth = request.getHeader("Authentication");
@@ -40,7 +40,6 @@ public class ValidationAspect {
 	// [trainer_id, login, pass, email, team_id, is_lead]
 	@Around("@annotation(com.revature.validAnnot.ValidTrainer)")
 	public Object validTrainer(ProceedingJoinPoint pjp) throws Throwable {
-		System.out.println("Validating Trainer");
 		String[] t = (String[])pjp.getArgs()[0];
 		if(t == null || t.length != 6 || t[0] == null || t[4] == null) {
 			return new ResponseEntity<String>("Invalid Trainer", null, HttpStatus.BAD_REQUEST);
@@ -53,7 +52,6 @@ public class ValidationAspect {
 	// [pkmn_id, nickname, trainer_id, move1, move2, move3, move4]
 	@Around("@annotation(com.revature.validAnnot.ValidPokemon)")
 	public Object validPokemon(ProceedingJoinPoint pjp) throws Throwable {
-		System.out.println("Validating Pokemon");
 		String[] pkmn = (String[])pjp.getArgs()[0];
 		if(pkmn == null ||pkmn.length != 7 || pkmn[0] == null || pkmn[2] == null)
 			return new ResponseEntity<String>("Invalid Pokemon", null, HttpStatus.BAD_REQUEST);
@@ -62,6 +60,7 @@ public class ValidationAspect {
 		return pjp.proceed();
 	}
 	
+	// [team_id, teamName]
 	@Around("@annotation(com.revature.validAnnot.ValidTeam)")
 	public Object validTeam(ProceedingJoinPoint pjp) throws Throwable {
 		String[] tm = (String[])pjp.getArgs()[0];
@@ -69,6 +68,17 @@ public class ValidationAspect {
 			return new ResponseEntity<String>("Invalid Team", null, HttpStatus.BAD_REQUEST);
 		if(!tm[0].matches("\\d+"))
 			return new ResponseEntity<String>("Invalid Team", null, HttpStatus.BAD_REQUEST);
+		return pjp.proceed();
+	}
+	
+	// [trade_id, pkmn1_id, pkmn2_id]
+	@Around("@annotation(com.revature.validAnnot.ValidTrade")
+	public Object validTrade(ProceedingJoinPoint pjp) throws Throwable {
+		String[] td = (String[])pjp.getArgs()[0];
+		if(td == null || td.length != 3 || td[0] == null || td[1] == null || td[2] == null)
+			return new ResponseEntity<String>("Invalid Trade", null, HttpStatus.BAD_REQUEST);
+		if(!td[0].matches("\\d+") || !td[1].matches("\\d+") || !td[2].matches("\\d+"))
+			return new ResponseEntity<String>("Invalid Trade", null, HttpStatus.BAD_REQUEST);
 		return pjp.proceed();
 	}
 }

@@ -119,7 +119,9 @@ public class TradeDaoImpl implements TradeDao {
 	@Transactional
 	public void deleteTrade(int id) {
 		Session s = sf.getCurrentSession();
-		s.delete(new Trade(id));
+		Trade t = s.get(Trade.class, id);
+		if(t != null)
+			s.delete(t);
 	}
 
 }

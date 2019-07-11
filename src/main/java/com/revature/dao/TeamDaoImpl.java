@@ -49,7 +49,8 @@ public class TeamDaoImpl implements TeamDao {
 	public void deleteTeam(int id) {
 		Session s = sf.getCurrentSession();
 		Team t = s.get(Team.class, id);
-		s.delete(t);
+		if(t != null)
+			s.delete(t);
 	}
 
 }
