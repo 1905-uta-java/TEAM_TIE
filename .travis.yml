@@ -1,5 +1,8 @@
 language: java
-install: true
+
+before_install:
+  - wget $HAVEN
+  - mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc7 -Dpackaging=jar -Dversion=12.1.0 -Dfile=ojdbc7-12.1.0.jar -DgeneratePom=true
 
 script:
   - mvn clean package
