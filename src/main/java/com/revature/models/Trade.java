@@ -21,7 +21,12 @@ public class Trade {
 	@OneToOne
 	private Pokemon pkmn_2;
 	
+	public Trade() {
+		super();
+	}
+	
 	public Trade(int id) {
+		super();
 		setId(id);
 	}
 	

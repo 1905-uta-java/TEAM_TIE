@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
-		  property = "id")
+		  property = "id",
+		  scope=Pokemon.class)
 @Entity
 public class Pokemon {
 	

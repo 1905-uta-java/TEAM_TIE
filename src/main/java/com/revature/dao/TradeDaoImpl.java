@@ -26,7 +26,6 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public List<Trade> getTrades() {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		List<Trade> trades = s.createQuery("from Trade", Trade.class).list();
 		return trades;
@@ -35,7 +34,6 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public Trade getTradeById(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		Trade t = s.get(Trade.class, id);
 		return t;
@@ -44,7 +42,6 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public List<Trade> getTradesBySender(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		CriteriaBuilder cb = s.getCriteriaBuilder();
 		CriteriaQuery<Trade> cq = cb.createQuery(Trade.class);
@@ -59,7 +56,6 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public List<Trade> getTradesByReciever(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		CriteriaBuilder cb = s.getCriteriaBuilder();
 		CriteriaQuery<Trade> cq = cb.createQuery(Trade.class);
@@ -74,7 +70,6 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public int createTrade(Trade t) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		int scs = (int) s.save(t);
 		return scs;
@@ -89,6 +84,10 @@ public class TradeDaoImpl implements TradeDao {
 		Trainer t1 = pkmn1.getTrainer_id();
 		pkmn1.setTrainer_id(pkmn2.getTrainer_id());
 		pkmn2.setTrainer_id(t1);
+		s.update(pkmn1.getTrainer_id().getTeam_id());
+		s.update(pkmn2.getTrainer_id().getTeam_id());
+		s.update(pkmn1.getTrainer_id());
+		s.update(pkmn2.getTrainer_id());
 		s.update(pkmn1);
 		s.update(pkmn2);
 		s.createQuery("delete from Trade where (PKMN_1_PK_ID = :id_one) OR (PKMN_2_PK_ID = "
@@ -99,7 +98,6 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public void updateTrade(Trade t) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		s.update(t);
 	}
@@ -107,7 +105,6 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public void deleteTrade(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		s.delete(new Trade(id));
 	}

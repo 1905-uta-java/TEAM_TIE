@@ -8,9 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.dao.TeamDao;
@@ -24,36 +27,36 @@ public class TeamController {
 	@Autowired
 	TeamDao tdi;
 	
-	@RequestMapping(value={"/", "/list"}, method=RequestMethod.GET)
+	@GetMapping(value={"/", "/list"})
 	@ResponseBody
 	public ResponseEntity<List<Team>> getTeams(){
 		List<Team> lt = tdi.getTeams();
-		return new ResponseEntity<List<Team>>(lt, null, HttpStatus.OK);
+		return new ResponseEntity<>(lt, null, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/id", method=RequestMethod.POST)
+	@PostMapping(value="/id")
 	@ResponseBody
 	public ResponseEntity<Team> getTeamById(@RequestBody int id) {
 		Team t = tdi.getTeamById(id);
-		return new ResponseEntity<Team>(t, null, HttpStatus.OK);
+		return new ResponseEntity<>(t, null, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/new", method=RequestMethod.POST)
+	@PostMapping(value="/new")
 	@ResponseBody
 	public ResponseEntity<Team> newTeam(@RequestBody Team t) {
 		tdi.createTeam(t);
-		return new ResponseEntity<Team>(t, null, HttpStatus.OK);
+		return new ResponseEntity<>(t, null, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/update", method=RequestMethod.PUT)
+	@PutMapping(value="/update")
 	public ResponseEntity<String> editTeam(@RequestBody Team t) {
 		tdi.updateTeam(t);
-		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
+		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/delete", method=RequestMethod.DELETE)
+	@DeleteMapping(value="/delete")
 	public ResponseEntity<String> deleteTeam(@RequestBody int id) {
 		tdi.deleteTeam(id);
-		return new ResponseEntity<String>("Complete", null, HttpStatus.OK);
+		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
 	}
 }

@@ -19,7 +19,6 @@ public class PokemonDaoImpl implements PokemonDao {
 	@Override
 	@Transactional
 	public List<Pokemon> getPokemon() {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		List<Pokemon> pkmn = s.createQuery("from Pokemon", Pokemon.class).list();
 		return pkmn;
@@ -28,7 +27,6 @@ public class PokemonDaoImpl implements PokemonDao {
 	@Override
 	@Transactional
 	public Pokemon getPokemonById(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		Pokemon p = s.get(Pokemon.class, id);
 		return p;
@@ -37,7 +35,6 @@ public class PokemonDaoImpl implements PokemonDao {
 	@Override
 	@Transactional
 	public int createPokemon(Pokemon p) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		int scs = (int) s.save(p);
 		return scs;
@@ -46,15 +43,15 @@ public class PokemonDaoImpl implements PokemonDao {
 	@Override
 	@Transactional
 	public void updatePokemon(Pokemon p) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
+		s.update(p.getTrainer_id().getTeam_id());
+		s.update(p.getTrainer_id());
 		s.update(p);
 	}
 
 	@Override
 	@Transactional
 	public void deletePokemon(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		s.delete(new Pokemon(id));
 	}
