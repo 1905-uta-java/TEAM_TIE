@@ -95,7 +95,9 @@ public class TrainerController {
 			t.setPass(vals[2]);
 		if(vals[3] != null)
 			t.setEmail(vals[3]);
-		if(Integer.parseInt(vals[4]) != t.getTeam_id().getId()) {
+		if(vals[4] == null)
+			t.setTeam_id(null);
+		else if(t.getTeam_id() == null || Integer.parseInt(vals[4]) != t.getTeam_id().getId()) {
 			Team tm = tmdi.getTeamById(Integer.parseInt(vals[4]));
 			t.setTeam_id(tm);
 		}
