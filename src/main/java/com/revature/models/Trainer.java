@@ -1,7 +1,6 @@
 package com.revature.models;
 
 import java.sql.Date;
-import java.time.Instant;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -20,7 +19,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
-		  property = "id")
+		  property = "id",
+		  scope=Trainer.class)
 @Entity
 public class Trainer {
 	@Id
@@ -41,6 +41,7 @@ public class Trainer {
 	
 	@ManyToOne
 	private Team team_id;
+	
 	
 	@OneToMany(mappedBy="trainer_id", fetch=FetchType.EAGER)
 	private List<Pokemon> pkmn;

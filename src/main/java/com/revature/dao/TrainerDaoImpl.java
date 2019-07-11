@@ -19,60 +19,59 @@ public class TrainerDaoImpl implements TrainerDao {
 	@Override
 	@Transactional
 	public List<Trainer> getTrainers() {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		List<Trainer> trainers = s.createQuery("from Trainer", Trainer.class).list();
-		return trainers;
+		return s.createQuery("from Trainer", Trainer.class).list();
 	}
 
 	@Override
 	@Transactional
 	public Trainer getTrainerById(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Trainer t = s.get(Trainer.class, id);
-		return t;
+		return s.get(Trainer.class, id);
 	}
 	
 	@Override
 	@Transactional
 	public List<Trainer> getTrainersByTeam(int id){
 		Session s = sf.getCurrentSession();
-		List<Trainer> trainers = s.createQuery("from Trainer where TEAM_ID_TEAM_ID = :id", Trainer.class).setParameter("id", id).list();
-		return trainers;
+		return s.createQuery("from Trainer where TEAM_ID_TEAM_ID = :id", Trainer.class).setParameter("id", id).list();
 	}
 	
 	@Override
 	@Transactional
 	public Trainer getTrainerByLogin(String login) {
 		Session s = sf.getCurrentSession();
-		Trainer t = s.createQuery("from Trainer where LOGIN = :login", Trainer.class).setParameter("login", login).getSingleResult();
-		return t;
+		List<Trainer> t = s.createQuery("from Trainer where LOGIN = :login", Trainer.class).setParameter("login", login).list();
+		if(!t.isEmpty())
+			return t.get(0);
+		return null;
 	}
 
 	@Override
 	@Transactional
 	public int createTrainer(Trainer t) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		int scs = (int) s.save(t);
-		return scs;
+		if(t.getTeam_id() != null)
+			s.update(t.getTeam_id());
+		return (int) s.save(t);
 	}
 
 	@Override
 	@Transactional
 	public void editTrainer(Trainer t) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
+		if(t.getTeam_id() != null)
+			s.update(t.getTeam_id());
 		s.update(t);
 	}
 
 	@Override
 	@Transactional
 	public void deleteTrainer(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		s.delete(new Trainer(id));
+		Trainer t = s.get(Trainer.class, id);
+		if(t != null)
+			s.delete(t);
 	}
 
 }

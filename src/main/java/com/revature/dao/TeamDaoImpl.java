@@ -19,34 +19,27 @@ public class TeamDaoImpl implements TeamDao {
 	@Override
 	@Transactional
 	public List<Team> getTeams() {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		List<Team> teams = s.createQuery("from Team", Team.class).list();
-		return teams;
+		return s.createQuery("from Team", Team.class).list();
 	}
 
 	@Override
 	@Transactional
 	public Team getTeamById(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Team t = s.get(Team.class, id);
-		return t;
+		return s.get(Team.class, id);
 	}
 
 	@Override
 	@Transactional
 	public int createTeam(Team t) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		int scs = (int) s.save(t);
-		return scs;
+		return (int) s.save(t);
 	}
 
 	@Override
 	@Transactional
 	public void updateTeam(Team t) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
 		s.update(t);
 	}
@@ -54,9 +47,10 @@ public class TeamDaoImpl implements TeamDao {
 	@Override
 	@Transactional
 	public void deleteTeam(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		s.delete(new Team(id));
+		Team t = s.get(Team.class, id);
+		if(t != null)
+			s.delete(t);
 	}
 
 }

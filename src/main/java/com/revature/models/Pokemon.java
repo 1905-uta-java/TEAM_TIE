@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class, 
-		  property = "id")
+		  property = "id",
+		  scope=Pokemon.class)
 @Entity
 public class Pokemon {
 	
@@ -75,6 +76,11 @@ public class Pokemon {
 
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+	
+	public void genCreated() {
+		long now = System.currentTimeMillis();
+		this.setCreated(new Date(now));
 	}
 	
 	public Trainer getTrainer_id() {

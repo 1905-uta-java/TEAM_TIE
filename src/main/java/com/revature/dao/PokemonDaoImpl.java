@@ -19,44 +19,44 @@ public class PokemonDaoImpl implements PokemonDao {
 	@Override
 	@Transactional
 	public List<Pokemon> getPokemon() {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		List<Pokemon> pkmn = s.createQuery("from Pokemon", Pokemon.class).list();
-		return pkmn;
+		return s.createQuery("from Pokemon", Pokemon.class).list();
 	}
 
 	@Override
 	@Transactional
 	public Pokemon getPokemonById(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		Pokemon p = s.get(Pokemon.class, id);
-		return p;
+		return s.get(Pokemon.class, id);
 	}
 
 	@Override
 	@Transactional
 	public int createPokemon(Pokemon p) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		int scs = (int) s.save(p);
-		return scs;
+		if(p.getTrainer_id().getTeam_id() != null)
+			s.update(p.getTrainer_id().getTeam_id());
+		s.update(p.getTrainer_id());
+		return (int) s.save(p);
 	}
 
 	@Override
 	@Transactional
 	public void updatePokemon(Pokemon p) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
+		if(p.getTrainer_id().getTeam_id() != null)
+			s.update(p.getTrainer_id().getTeam_id());
+		s.update(p.getTrainer_id());
 		s.update(p);
 	}
 
 	@Override
 	@Transactional
 	public void deletePokemon(int id) {
-		// TODO Auto-generated method stub
 		Session s = sf.getCurrentSession();
-		s.delete(new Pokemon(id));
+		Pokemon pkmn = s.get(Pokemon.class, id);
+		if(pkmn != null)
+			s.delete(pkmn);
 	}
 
 }
