@@ -20,24 +20,21 @@ public class TeamDaoImpl implements TeamDao {
 	@Transactional
 	public List<Team> getTeams() {
 		Session s = sf.getCurrentSession();
-		List<Team> teams = s.createQuery("from Team", Team.class).list();
-		return teams;
+		return s.createQuery("from Team", Team.class).list();
 	}
 
 	@Override
 	@Transactional
 	public Team getTeamById(int id) {
 		Session s = sf.getCurrentSession();
-		Team t = s.get(Team.class, id);
-		return t;
+		return s.get(Team.class, id);
 	}
 
 	@Override
 	@Transactional
 	public int createTeam(Team t) {
 		Session s = sf.getCurrentSession();
-		int scs = (int) s.save(t);
-		return scs;
+		return (int) s.save(t);
 	}
 
 	@Override
@@ -51,7 +48,8 @@ public class TeamDaoImpl implements TeamDao {
 	@Transactional
 	public void deleteTeam(int id) {
 		Session s = sf.getCurrentSession();
-		s.delete(new Team(id));
+		Team t = s.get(Team.class, id);
+		s.delete(t);
 	}
 
 }

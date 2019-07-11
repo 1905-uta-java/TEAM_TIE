@@ -78,6 +78,11 @@ public class Pokemon {
 		this.created = created;
 	}
 	
+	public void genCreated() {
+		long now = System.currentTimeMillis();
+		this.setCreated(new Date(now));
+	}
+	
 	public Trainer getTrainer_id() {
 		return trainer_id;
 	}

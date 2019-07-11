@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.dao.TeamDao;
 import com.revature.models.Team;
+import com.revature.validAnnot.ValidTeam;
 
 @Controller
 @CrossOrigin
@@ -41,15 +42,22 @@ public class TeamController {
 		return new ResponseEntity<>(t, null, HttpStatus.OK);
 	}
 	
+	//[team_id, teamName]
 	@PostMapping(value="/new")
 	@ResponseBody
-	public ResponseEntity<Team> newTeam(@RequestBody Team t) {
+	@ValidTeam
+	public ResponseEntity<Team> newTeam(@RequestBody String[] tm) {
+		Team t = new Team();
+		t.setTeamName(tm[1]);
 		tdi.createTeam(t);
 		return new ResponseEntity<>(t, null, HttpStatus.OK);
 	}
 	
 	@PutMapping(value="/update")
-	public ResponseEntity<String> editTeam(@RequestBody Team t) {
+	@ValidTeam
+	public ResponseEntity<String> editTeam(@RequestBody String[] tm) {
+		Team t = tdi.getTeamById(Integer.parseInt(tm[0]));
+		t.setTeamName(tm[1]);
 		tdi.updateTeam(t);
 		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
 	}

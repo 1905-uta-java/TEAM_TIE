@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.revature.dao.PokemonDao;
 import com.revature.dao.TradeDao;
+import com.revature.models.Pokemon;
 import com.revature.models.Trade;
 
 @Controller
@@ -26,6 +28,8 @@ import com.revature.models.Trade;
 public class TradeController {
 	@Autowired
 	TradeDao tdi;
+	@Autowired
+	PokemonDao pdi;
 	
 	@GetMapping(value= {"/", "/list"})
 	@ResponseBody
@@ -54,21 +58,30 @@ public class TradeController {
 		return new ResponseEntity<>(lt, null, HttpStatus.OK);
 	}
 	
+	//[trade_id, pkmn1_id, pkmn2_id]
 	@PostMapping(value="/new")
 	@ResponseBody
-	public ResponseEntity<Trade> createTrade(@RequestBody Trade t) {
+	public ResponseEntity<Trade> createTrade(@RequestBody String[] tsa) {
+		Trade t = new Trade();
+		Pokemon p1 = pdi.getPokemonById(Integer.parseInt(tsa[1]));
+		Pokemon p2 = pdi.getPokemonById(Integer.parseInt(tsa[2]));
+		t.setPkmn_1(p1);
+		t.setPkmn_2(p2);
 		tdi.createTrade(t);
 		return new ResponseEntity<>(t, null, HttpStatus.OK);
 	}
 	
 	@PostMapping(value="/accept")
-	public ResponseEntity<String> acceptTrade(@RequestBody Trade t) {
+	public ResponseEntity<String> acceptTrade(@RequestBody int id) {
+		Trade t = tdi.getTradeById(id);
 		tdi.acceptTrade(t);
 		return new ResponseEntity<>("Accepted", null, HttpStatus.OK);
 	}
 	
+	// [trade_id, pkmn1_id, pkmn2_id]
 	@PutMapping(value="/update")
-	public ResponseEntity<String> updateTrade(@RequestBody Trade t) {
+	public ResponseEntity<String> updateTrade(@RequestBody String[] tsa) {
+		Trade t = tdi.getTradeById(Integer.parseInt(tsa[0]));
 		tdi.updateTrade(t);
 		return new ResponseEntity<>("Updated", null, HttpStatus.OK);
 	}

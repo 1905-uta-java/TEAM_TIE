@@ -27,16 +27,14 @@ public class TradeDaoImpl implements TradeDao {
 	@Transactional
 	public List<Trade> getTrades() {
 		Session s = sf.getCurrentSession();
-		List<Trade> trades = s.createQuery("from Trade", Trade.class).list();
-		return trades;
+		return s.createQuery("from Trade", Trade.class).list();
 	}
 
 	@Override
 	@Transactional
 	public Trade getTradeById(int id) {
 		Session s = sf.getCurrentSession();
-		Trade t = s.get(Trade.class, id);
-		return t;
+		return s.get(Trade.class, id);
 	}
 
 	@Override
@@ -49,8 +47,7 @@ public class TradeDaoImpl implements TradeDao {
 		cq.select(rt);
 		cq.where(cb.equal(rt.<Pokemon>get("pkmn_1").<Trainer>get("trainer_id").get("id"), id));
 		Query<Trade> q = s.createQuery(cq);
-		List<Trade> trades = q.list();
-		return trades;
+		return q.list();
 	}
 
 	@Override
@@ -63,16 +60,22 @@ public class TradeDaoImpl implements TradeDao {
 		cq.select(rt);
 		cq.where(cb.equal(rt.<Pokemon>get("pkmn_2").<Trainer>get("trainer_id").get("id"), id));
 		Query<Trade> q = s.createQuery(cq);
-		List<Trade> trades = q.list();
-		return trades;
+		return q.list();
 	}
 
 	@Override
 	@Transactional
 	public int createTrade(Trade t) {
 		Session s = sf.getCurrentSession();
-		int scs = (int) s.save(t);
-		return scs;
+		if(t.getPkmn_1().getTrainer_id().getTeam_id() != null)
+			s.update(t.getPkmn_1().getTrainer_id().getTeam_id());
+		if(t.getPkmn_2().getTrainer_id().getTeam_id() != null)
+			s.update(t.getPkmn_2().getTrainer_id().getTeam_id());
+		s.update(t.getPkmn_1().getTrainer_id());
+		s.update(t.getPkmn_2().getTrainer_id());
+		s.update(t.getPkmn_1());
+		s.update(t.getPkmn_2());
+		return (int) s.save(t);
 	}
 	
 	@Override
@@ -84,8 +87,10 @@ public class TradeDaoImpl implements TradeDao {
 		Trainer t1 = pkmn1.getTrainer_id();
 		pkmn1.setTrainer_id(pkmn2.getTrainer_id());
 		pkmn2.setTrainer_id(t1);
-		s.update(pkmn1.getTrainer_id().getTeam_id());
-		s.update(pkmn2.getTrainer_id().getTeam_id());
+		if(pkmn1.getTrainer_id().getTeam_id() != null)
+			s.update(pkmn1.getTrainer_id().getTeam_id());
+		if(pkmn2.getTrainer_id().getTeam_id() != null)
+			s.update(pkmn2.getTrainer_id().getTeam_id());
 		s.update(pkmn1.getTrainer_id());
 		s.update(pkmn2.getTrainer_id());
 		s.update(pkmn1);
@@ -99,6 +104,14 @@ public class TradeDaoImpl implements TradeDao {
 	@Transactional
 	public void updateTrade(Trade t) {
 		Session s = sf.getCurrentSession();
+		if(t.getPkmn_1().getTrainer_id().getTeam_id() != null)
+			s.update(t.getPkmn_1().getTrainer_id().getTeam_id());
+		if(t.getPkmn_2().getTrainer_id().getTeam_id() != null)
+			s.update(t.getPkmn_2().getTrainer_id().getTeam_id());
+		s.update(t.getPkmn_1().getTrainer_id());
+		s.update(t.getPkmn_2().getTrainer_id());
+		s.update(t.getPkmn_1());
+		s.update(t.getPkmn_2());
 		s.update(t);
 	}
 

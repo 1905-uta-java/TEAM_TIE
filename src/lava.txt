@@ -226,3 +226,784 @@ Caused by: java.io.FileNotFoundException: class path resource [com/revature/test
 	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
 	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
 	... 37 more
+2019-07-10 21:24:41 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:24:41 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ea12c19, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7921b0a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@174d20a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d2e7d9]
+2019-07-10 21:24:41 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [com/revature/main/webapp/WEB-INF/beans.xml]
+2019-07-10 21:24:41 ERROR TestContextManager:234 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67] to prepare test instance [com.revature.test.daoTest@612679d6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [com/revature/main/webapp/WEB-INF/beans.xml]; nested exception is java.io.FileNotFoundException: class path resource [com/revature/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [com/revature/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+2019-07-10 21:25:16 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:25:16 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ea12c19, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7921b0a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@174d20a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d2e7d9]
+2019-07-10 21:25:16 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [com/revature/src/main/webapp/WEB-INF/beans.xml]
+2019-07-10 21:25:16 ERROR TestContextManager:234 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67] to prepare test instance [com.revature.test.daoTest@612679d6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [com/revature/src/main/webapp/WEB-INF/beans.xml]; nested exception is java.io.FileNotFoundException: class path resource [com/revature/src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [com/revature/src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+2019-07-10 21:26:07 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:26:07 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ea12c19, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7921b0a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@174d20a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d2e7d9]
+2019-07-10 21:26:07 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [com/revature/test/main/webapp/WEB-INF/beans.xml]
+2019-07-10 21:26:07 ERROR TestContextManager:234 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67] to prepare test instance [com.revature.test.daoTest@612679d6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [com/revature/test/main/webapp/WEB-INF/beans.xml]; nested exception is java.io.FileNotFoundException: class path resource [com/revature/test/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [com/revature/test/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+2019-07-10 21:27:36 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:27:36 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 21:27:37 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [src/main/webapp/WEB-INF/beans.xml]
+2019-07-10 21:27:37 ERROR TestContextManager:234 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c] to prepare test instance [com.revature.test.daoTest@612fc6eb]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [src/main/webapp/WEB-INF/beans.xml]; nested exception is java.io.FileNotFoundException: class path resource [src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+2019-07-10 21:28:51 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:28:51 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ea12c19, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7921b0a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@174d20a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d2e7d9]
+2019-07-10 21:28:51 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [com/src/main/webapp/WEB-INF/beans.xml]
+2019-07-10 21:28:51 ERROR TestContextManager:234 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67] to prepare test instance [com.revature.test.daoTest@612679d6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [com/src/main/webapp/WEB-INF/beans.xml]; nested exception is java.io.FileNotFoundException: class path resource [com/src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [com/src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+2019-07-10 21:29:07 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:29:07 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ea12c19, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7921b0a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@174d20a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d2e7d9]
+2019-07-10 21:29:07 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [src/main/webapp/WEB-INF/beans.xml]
+2019-07-10 21:29:07 ERROR TestContextManager:234 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67] to prepare test instance [com.revature.test.daoTest@612679d6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [src/main/webapp/WEB-INF/beans.xml]; nested exception is java.io.FileNotFoundException: class path resource [src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [src/main/webapp/WEB-INF/beans.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+2019-07-10 21:31:05 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:31:05 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ea12c19, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7921b0a2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@174d20a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@66d2e7d9]
+2019-07-10 21:31:05 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [com/revature/test/beans.xml]
+2019-07-10 21:31:05 ERROR TestContextManager:234 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a024a67] to prepare test instance [com.revature.test.daoTest@612679d6]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:541)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:763)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:463)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:209)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [com/revature/test/beans.xml]; nested exception is java.io.FileNotFoundException: class path resource [com/revature/test/beans.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:344)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:304)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:181)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:217)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:188)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:252)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadBeanDefinitions(AbstractGenericContextLoader.java:257)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:124)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:108)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:251)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116)
+	... 25 more
+Caused by: java.io.FileNotFoundException: class path resource [com/revature/test/beans.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:330)
+	... 37 more
+2019-07-10 21:40:21 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:40:21 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 21:40:22 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 21:40:22 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:40:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:40:24 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 21:40:24 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 21:40:24 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 21:40:26 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 21:40:31 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 21:40:32 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:40:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:40:32 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:40:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:40:32 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 21:40:32 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:40:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:49:21 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:49:21 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 21:49:21 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 21:49:22 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:49:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:49:23 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 21:49:23 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 21:49:23 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 21:49:25 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 21:49:30 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 21:49:31 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:49:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:49:31 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:49:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:49:31 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 21:49:31 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-10 21:49:31 WARN  SqlExceptionHelper:137 - SQL Error: 1, SQLState: 23000
+2019-07-10 21:49:31 ERROR SqlExceptionHelper:142 - ORA-00001: unique constraint (TIE.UK_FPGO4IFC5UC2I3WJBV1K4CYR2) violated
+
+2019-07-10 21:49:31 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-07-10 21:49:31 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:49:22 CDT 2019]; root of context hierarchy
+2019-07-10 21:51:19 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:51:19 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 21:51:19 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 21:51:20 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:51:20 CDT 2019]; root of context hierarchy
+2019-07-10 21:51:21 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 21:51:21 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 21:51:22 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 21:51:24 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 21:51:27 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 21:51:28 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:51:20 CDT 2019]; root of context hierarchy
+2019-07-10 21:51:29 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:51:20 CDT 2019]; root of context hierarchy
+2019-07-10 21:51:29 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 21:51:29 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-10 21:51:29 WARN  SqlExceptionHelper:137 - SQL Error: 1, SQLState: 23000
+2019-07-10 21:51:29 ERROR SqlExceptionHelper:142 - ORA-00001: unique constraint (TIE.UK_FPGO4IFC5UC2I3WJBV1K4CYR2) violated
+
+2019-07-10 21:51:29 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-07-10 21:51:29 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:51:20 CDT 2019]; root of context hierarchy
+2019-07-10 21:57:01 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 21:57:01 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 21:57:01 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 21:57:01 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:57:01 CDT 2019]; root of context hierarchy
+2019-07-10 21:57:03 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 21:57:03 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 21:57:03 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 21:57:05 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 21:57:10 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 21:57:11 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:57:01 CDT 2019]; root of context hierarchy
+2019-07-10 21:57:11 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:57:01 CDT 2019]; root of context hierarchy
+2019-07-10 21:57:11 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 21:57:11 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-10 21:57:11 WARN  SqlExceptionHelper:137 - SQL Error: 1, SQLState: 23000
+2019-07-10 21:57:11 ERROR SqlExceptionHelper:142 - ORA-00001: unique constraint (TIE.UK_FPGO4IFC5UC2I3WJBV1K4CYR2) violated
+
+2019-07-10 21:57:11 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-07-10 21:57:11 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 21:57:01 CDT 2019]; root of context hierarchy
+2019-07-10 22:02:08 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 22:02:08 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 22:02:09 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 22:02:09 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:02:09 CDT 2019]; root of context hierarchy
+2019-07-10 22:02:11 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 22:02:11 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 22:02:11 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 22:02:13 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 22:02:17 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 22:02:18 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:02:09 CDT 2019]; root of context hierarchy
+2019-07-10 22:02:18 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:02:09 CDT 2019]; root of context hierarchy
+2019-07-10 22:02:19 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 22:02:19 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-10 22:02:19 WARN  SqlExceptionHelper:137 - SQL Error: 1, SQLState: 23000
+2019-07-10 22:02:19 ERROR SqlExceptionHelper:142 - ORA-00001: unique constraint (TIE.UK_FPGO4IFC5UC2I3WJBV1K4CYR2) violated
+
+2019-07-10 22:02:19 ERROR ExceptionMapperStandardImpl:39 - HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-07-10 22:02:19 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:02:09 CDT 2019]; root of context hierarchy
+2019-07-10 22:03:13 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 22:03:13 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 22:03:13 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 22:03:14 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:03:14 CDT 2019]; root of context hierarchy
+2019-07-10 22:03:15 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 22:03:15 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 22:03:15 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 22:03:17 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 22:03:21 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 22:03:23 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:03:14 CDT 2019]; root of context hierarchy
+2019-07-10 22:03:23 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:03:14 CDT 2019]; root of context hierarchy
+2019-07-10 22:03:23 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 22:03:24 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-10 22:03:24 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-10 22:03:24 INFO  root:17 - void com.revature.dao.TeamDao.updateTeam(Team) was called
+2019-07-10 22:03:24 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-10 22:03:24 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-10 22:07:07 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 22:07:07 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 22:07:08 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 22:07:08 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:07:08 CDT 2019]; root of context hierarchy
+2019-07-10 22:07:10 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 22:07:10 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 22:07:10 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 22:07:12 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 22:07:16 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 22:07:17 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:07:08 CDT 2019]; root of context hierarchy
+2019-07-10 22:07:17 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:07:08 CDT 2019]; root of context hierarchy
+2019-07-10 22:07:17 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 22:07:18 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-10 22:07:18 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-10 22:07:18 INFO  root:17 - void com.revature.dao.TeamDao.updateTeam(Team) was called
+2019-07-10 22:10:53 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 22:10:53 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 22:10:53 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 22:10:54 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:10:54 CDT 2019]; root of context hierarchy
+2019-07-10 22:10:55 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 22:10:55 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 22:10:55 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 22:10:57 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 22:11:01 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 22:11:02 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:10:54 CDT 2019]; root of context hierarchy
+2019-07-10 22:11:02 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:10:54 CDT 2019]; root of context hierarchy
+2019-07-10 22:11:03 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 22:11:03 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-10 22:12:51 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-10 22:12:51 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-10 22:12:51 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-10 22:12:51 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:12:51 CDT 2019]; root of context hierarchy
+2019-07-10 22:12:53 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-10 22:12:53 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-10 22:12:53 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-10 22:12:55 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(com.revature.models.Pokemon)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(com.revature.models.Pokemon)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(com.revature.models.Team)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(com.revature.models.Team)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(com.revature.models.Trainer)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-10 22:12:59 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-10 22:13:00 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:12:51 CDT 2019]; root of context hierarchy
+2019-07-10 22:13:00 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Wed Jul 10 22:12:51 CDT 2019]; root of context hierarchy
+2019-07-10 22:13:00 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@38831718] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-10 22:13:00 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 10:13:16 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-07-11 10:13:16 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2344fc66, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@458ad742, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5afa04c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ea12c19, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6a024a67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7921b0a2]
+2019-07-11 10:13:16 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [beans.xml]
+2019-07-11 10:13:16 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 10:13:16 CDT 2019]; root of context hierarchy
+2019-07-11 10:13:18 INFO  Version:46 - HHH000412: Hibernate Core {5.3.7.Final}
+2019-07-11 10:13:18 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2019-07-11 10:13:18 INFO  Version:49 - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-07-11 10:13:20 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Login/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.LoginController.listTrainers(java.lang.String[])
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.createPokemon(java.lang.String[])
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.updatePokemon(java.lang.String[])
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Pokemon> com.revature.controllers.PokemonController.getPokemonById(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/ || /Pokemon/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Pokemon>> com.revature.controllers.PokemonController.getPokemon()
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Pokemon/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.PokemonController.deletePokemon(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.getTeamById(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.deleteTeam(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/ || /Teams/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Team>> com.revature.controllers.TeamController.getTeams()
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Team> com.revature.controllers.TeamController.newTeam(java.lang.String[])
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Teams/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TeamController.editTeam(java.lang.String[])
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.deleteTrade(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/accept],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.acceptTrade(com.revature.models.Trade)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.createTrade(com.revature.models.Trade)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TradeController.updateTrade(com.revature.models.Trade)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/ || /Trades/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.listTrades()
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/incoming],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.incommingTrades(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/outgoing],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trade>> com.revature.controllers.TradeController.outgoingTrades(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trades/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trade> com.revature.controllers.TradeController.listTradesById(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/delete],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.deleteTrainer(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/new],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.createTrainer(java.lang.String[])
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/username],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainerByLogin(java.lang.String)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/team],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainersByTeam(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/teammates],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainerTeammates(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/ || /Trainers/list],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.revature.models.Trainer>> com.revature.controllers.TrainerController.listTrainers()
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/tst],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.testConnection()
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/id],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.revature.models.Trainer> com.revature.controllers.TrainerController.getTrainer(int)
+2019-07-11 10:13:24 INFO  RequestMappingHandlerMapping:543 - Mapped "{[/Trainers/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.revature.controllers.TrainerController.updateTrainer(java.lang.String[])
+2019-07-11 10:13:25 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 10:13:16 CDT 2019]; root of context hierarchy
+2019-07-11 10:13:25 INFO  RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 10:13:16 CDT 2019]; root of context hierarchy
+2019-07-11 10:13:25 INFO  HibernateTransactionManager:357 - Using DataSource [org.apache.commons.dbcp.BasicDataSource@10b9db7b] of Hibernate SessionFactory for HibernateTransactionManager
+2019-07-11 10:13:26 INFO  root:17 - int com.revature.dao.TeamDao.createTeam(Team) was called
+2019-07-11 10:13:26 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 10:13:26 INFO  root:17 - void com.revature.dao.TeamDao.updateTeam(Team) was called
+2019-07-11 10:13:26 INFO  root:17 - Team com.revature.dao.TeamDao.getTeamById(int) was called
+2019-07-11 10:13:26 INFO  root:17 - void com.revature.dao.TeamDao.deleteTeam(int) was called
+2019-07-11 10:13:26 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6a41eaa2: startup date [Thu Jul 11 10:13:16 CDT 2019]; root of context hierarchy

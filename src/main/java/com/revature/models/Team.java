@@ -67,6 +67,10 @@ public class Team {
 		this.created = created;
 	}
 	
+	public void genCreated() {
+		
+	}
+	
 	public String getTeamName() {
 		return team_name;
 	}
