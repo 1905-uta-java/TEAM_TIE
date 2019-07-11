@@ -49,6 +49,7 @@ public class TeamController {
 	public ResponseEntity<Team> newTeam(@RequestBody String[] tm) {
 		Team t = new Team();
 		t.setTeamName(tm[1]);
+		t.genCreated();
 		tdi.createTeam(t);
 		return new ResponseEntity<>(t, null, HttpStatus.OK);
 	}
