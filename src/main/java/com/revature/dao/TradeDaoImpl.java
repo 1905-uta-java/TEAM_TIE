@@ -83,6 +83,8 @@ public class TradeDaoImpl implements TradeDao {
 	@Override
 	@Transactional
 	public void acceptTrade(Trade t) {
+		if(t == null)
+			return;
 		Session s = sf.getCurrentSession();
 		Pokemon pkmn1 = t.getPkmn_1();
 		Pokemon pkmn2 = t.getPkmn_2();

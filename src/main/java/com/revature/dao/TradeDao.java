@@ -3,7 +3,6 @@ package com.revature.dao;
 import java.util.List;
 
 import com.revature.models.Trade;
-import com.revature.models.Trainer;
 
 public interface TradeDao {
 	public List<Trade> getTrades();
