@@ -23,7 +23,9 @@ public class Trade {
 	@Column(name="trade_id")
 	private int id;
 	
+	@OneToOne
 	private Pokemon pkmn_1;
+	@OneToOne
 	private Pokemon pkmn_2;
 	
 	public Trade() {
