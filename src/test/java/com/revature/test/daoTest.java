@@ -3,6 +3,7 @@ package com.revature.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,7 @@ public class daoTest {
 	@Autowired
 	TradeDao tradedao;
 	
+	@Ignore
 	@Test
 	public void teamDaoTests() {
 		Team t = new Team();
@@ -48,6 +50,7 @@ public class daoTest {
 		teamdao.deleteTeam(id);
 	}
 	
+	@Ignore
 	@Test
 	public void trainerDaoTests() {
 		Trainer t = new Trainer();
@@ -70,6 +73,7 @@ public class daoTest {
 		teamdao.deleteTeam(tmid);
 	}
 	
+	@Ignore
 	@Test
 	public void pokemonDaoTests() {
 		Pokemon p = new Pokemon();
@@ -93,6 +97,7 @@ public class daoTest {
 	}
 	
 	// The most complicated test...
+	@Ignore
 	@Test
 	public void tradeDaoTests() {
 		Trainer tr1 = new Trainer("test4train1", "pass41", "test4@train1.com");

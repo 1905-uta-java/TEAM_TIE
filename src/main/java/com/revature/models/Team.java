@@ -68,7 +68,8 @@ public class Team {
 	}
 	
 	public void genCreated() {
-		
+		long now = System.currentTimeMillis();
+		this.setCreated(new Date(now));
 	}
 	
 	public String getTeamName() {

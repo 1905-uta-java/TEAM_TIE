@@ -79,7 +79,7 @@ public class TradeController {
 	public ResponseEntity<String> acceptTrade(@RequestBody int id) {
 		Trade t = tdi.getTradeById(id);
 		tdi.acceptTrade(t);
-		return new ResponseEntity<>("Accepted", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	// [trade_id, pkmn1_id, pkmn2_id]
@@ -94,12 +94,12 @@ public class TradeController {
 		t.setPkmn_1(p1);
 		t.setPkmn_2(p2);
 		tdi.updateTrade(t);
-		return new ResponseEntity<>("Updated", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/delete")
 	public ResponseEntity<String> deleteTrade(@RequestBody int id) {
 		tdi.deleteTrade(id);
-		return new ResponseEntity<>("Deleted", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 }

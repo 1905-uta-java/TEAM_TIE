@@ -41,11 +41,15 @@ public class ValidationAspect {
 	@Around("@annotation(com.revature.validAnnot.ValidTrainer)")
 	public Object validTrainer(ProceedingJoinPoint pjp) throws Throwable {
 		String[] t = (String[])pjp.getArgs()[0];
+		String failed = "Invalid Trainer";
 		if(t == null || t.length != 6 || t[0] == null || t[4] == null) {
-			return new ResponseEntity<String>("Invalid Trainer", null, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
 		}
-		if(!t[0].matches("\\d+") || !t[4].matches("\\d+"))
-			return new ResponseEntity<String>("Invalid Trainer", null, HttpStatus.BAD_REQUEST);
+		if(t[0].length() > 9 || (t[1] != null && t[1].length() > 255) || (t[2] != null && t[2].length() > 255) || 
+				(t[3] != null && t[3].length() > 255) || t[4].length() > 9 || (t[5] != null && t[5].length() > 1))
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
+		if(!t[0].matches("\\d+") || !t[4].matches("\\d+") || (t[3] != null && !t[3].matches("[^@]+@[^\\.]+\\..+")))
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
 		return pjp.proceed();
 	}
 	
@@ -53,10 +57,16 @@ public class ValidationAspect {
 	@Around("@annotation(com.revature.validAnnot.ValidPokemon)")
 	public Object validPokemon(ProceedingJoinPoint pjp) throws Throwable {
 		String[] pkmn = (String[])pjp.getArgs()[0];
+		int[] max = {9, 9, 255, 9, 255, 255, 255, 255};
+		String failed = "Invalid Pokemon";
 		if(pkmn == null ||pkmn.length != 8 || pkmn[0] == null || pkmn[1] == null || pkmn[3] == null)
-			return new ResponseEntity<String>("Invalid Pokemon", null, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
+		for(int i=0; i<8; i++) {
+			if(pkmn[i].length() > max[i])
+				return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
+		}
 		if(!pkmn[0].matches("\\d+") || !pkmn[1].matches("\\d+") || !pkmn[3].matches("\\d+") || (pkmn[5] != null && !pkmn[5].matches("\\d+")))
-			return new ResponseEntity<String>("Invalid Pokemon", null, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
 		return pjp.proceed();
 	}
 	
@@ -64,21 +74,27 @@ public class ValidationAspect {
 	@Around("@annotation(com.revature.validAnnot.ValidTeam)")
 	public Object validTeam(ProceedingJoinPoint pjp) throws Throwable {
 		String[] tm = (String[])pjp.getArgs()[0];
+		String failed = "Invalid Team";
 		if(tm == null || tm.length != 2 || tm[0] == null || tm[1] == null)
-			return new ResponseEntity<String>("Invalid Team", null, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
+		if(tm[0].length() > 9 || tm[1].length() > 255)
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
 		if(!tm[0].matches("\\d+"))
-			return new ResponseEntity<String>("Invalid Team", null, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
 		return pjp.proceed();
 	}
 	
 	// [trade_id, pkmn1_id, pkmn2_id]
 	@Around("@annotation(com.revature.validAnnot.ValidTrade)")
 	public Object validTrade(ProceedingJoinPoint pjp) throws Throwable {
-		String[] td = (String[])pjp.getArgs()[0];
-		if(td == null || td.length != 3 || td[0] == null || td[1] == null || td[2] == null)
-			return new ResponseEntity<String>("Invalid Trade", null, HttpStatus.BAD_REQUEST);
-		if(!td[0].matches("\\d+") || !td[1].matches("\\d+") || !td[2].matches("\\d+"))
-			return new ResponseEntity<String>("Invalid Trade", null, HttpStatus.BAD_REQUEST);
+		String[] tds = (String[])pjp.getArgs()[0];
+		String failed = "Invalid Trade";
+		if(tds == null || tds.length != 3 || tds[0] == null || tds[1] == null || tds[2] == null)
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
+		if(tds[0].length() > 9 || tds[1].length() > 9 || tds[2].length() > 9)
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
+		if(!tds[0].matches("\\d+") || !tds[1].matches("\\d+") || !tds[2].matches("\\d+"))
+			return new ResponseEntity<String>(failed, null, HttpStatus.BAD_REQUEST);
 		return pjp.proceed();
 	}
 }
