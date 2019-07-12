@@ -29,7 +29,7 @@ public class Team {
 	
 	private Date created;
 	
-	@Column(unique=true)
+	@Column(unique=true, nullable=false)
 	private String team_name;
 	
 	@OneToMany(mappedBy="team_id", fetch=FetchType.EAGER)
