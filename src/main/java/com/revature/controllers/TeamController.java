@@ -49,6 +49,7 @@ public class TeamController {
 	public ResponseEntity<Team> newTeam(@RequestBody String[] tm) {
 		Team t = new Team();
 		t.setTeamName(tm[1]);
+		t.genCreated();
 		tdi.createTeam(t);
 		return new ResponseEntity<>(t, null, HttpStatus.OK);
 	}
@@ -61,12 +62,12 @@ public class TeamController {
 			return new ResponseEntity<>("Team does not exist", null, HttpStatus.BAD_REQUEST);
 		t.setTeamName(tm[1]);
 		tdi.updateTeam(t);
-		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/delete")
 	public ResponseEntity<String> deleteTeam(@RequestBody int id) {
 		tdi.deleteTeam(id);
-		return new ResponseEntity<>("Complete", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 }

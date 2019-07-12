@@ -95,20 +95,22 @@ public class TrainerController {
 			t.setPass(vals[2]);
 		if(vals[3] != null)
 			t.setEmail(vals[3]);
-		if(Integer.parseInt(vals[4]) != t.getTeam_id().getId()) {
+		if(vals[4] == null)
+			t.setTeam_id(null);
+		else if(t.getTeam_id() == null || Integer.parseInt(vals[4]) != t.getTeam_id().getId()) {
 			Team tm = tmdi.getTeamById(Integer.parseInt(vals[4]));
 			t.setTeam_id(tm);
 		}
 		if(vals[5] != null)
 			t.setIs_lead(Integer.parseInt(vals[5]));
 		tdi.editTrainer(t);
-		return new ResponseEntity<>("Updated", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value="/delete")
 	public ResponseEntity<String> deleteTrainer(@RequestBody int id) {
 		tdi.deleteTrainer(id);
-		return new ResponseEntity<>("Deleted", null, HttpStatus.OK);
+		return new ResponseEntity<>(null, null, HttpStatus.OK);
 	}
 	
 	@GetMapping(value="/tst")
